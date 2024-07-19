@@ -220,7 +220,7 @@ export const AvailableTimes = ({
       <div className="h-full pb-4">
         {!slots.length && (
           <div
-            data-testId="no-slots-available"
+            data-testid="no-slots-available"
             className="bg-subtle border-subtle flex h-full flex-col items-center rounded-md border p-6 dark:bg-transparent">
             <Icon name="calendar-x-2" className="text-muted mb-2 h-4 w-4" />
             <p className={classNames("text-muted", showTimeFormatToggle ? "-mt-1 text-lg" : "text-sm")}>
