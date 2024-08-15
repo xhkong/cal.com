@@ -87,7 +87,6 @@ import { useGetUserAttributes } from "@calcom/web/components/settings/platform/h
 
 import { useOrgBranding } from "../ee/organizations/context/provider";
 import FreshChatProvider from "../ee/support/lib/freshchat/FreshChatProvider";
-import { TeamInviteBadge } from "./TeamInviteBadge";
 
 // need to import without ssr to prevent hydration errors
 const Tips = dynamic(() => import("@calcom/features/tips").then((mod) => mod.Tips), {
@@ -603,24 +602,11 @@ const navigation: NavigationItemType[] = [
     href: "/availability",
     icon: "clock",
   },
-  {
-    name: "teams",
-    href: "/teams",
-    icon: "users",
-    onlyDesktop: true,
-    badge: <TeamInviteBadge />,
-  },
 
   {
     name: MORE_SEPARATOR_NAME,
     href: "/more",
     icon: "ellipsis",
-  },
-
-  {
-    name: "workflows",
-    href: "/workflows",
-    icon: "zap",
   },
   {
     name: "insights",
@@ -990,7 +976,6 @@ function SideBar({ bannersHeight, user, isPlatformUser = false }: SideBarProps) 
 
         {!isPlatformUser && (
           <div>
-            <Tips />
             {bottomNavItems.map((item, index) => (
               <Tooltip side="right" content={t(item.name)} className="lg:hidden" key={item.name}>
                 <ButtonOrLink
