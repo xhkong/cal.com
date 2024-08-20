@@ -10,7 +10,7 @@ function detectTransport(): SendmailTransport.Options | SMTPConnection.Options |
     const transport = {
       host: "smtp.resend.com",
       secure: true,
-      port: 465,
+      port: 587,
       auth: {
         user: "resend",
         pass: process.env.RESEND_API_KEY,
